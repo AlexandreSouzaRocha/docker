@@ -1,8 +1,8 @@
-version: '3.8'
+version: "3.8"
 
 services:
   db:
-    container_name: postgres-candidate-api-container
+    container_name: postgres-local-container
     image: postgres
     volumes:
       - type: volume
@@ -11,7 +11,7 @@ services:
         volume:
           nocopy: true
     ports:
-      - '5432:5432'
+      - "5432:5432"
     restart: always
     environment: 
       POSTGRES_PASSWORD: ${DB_PASSWORD}
