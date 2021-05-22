@@ -1,10 +1,16 @@
 version: "3.8"
 
 services:
-  queue:
-    container_name: rabbitmq-local-container
+  rabbitmq-managemant:
+    container_name: rabbitmq-managemant-local-container
     image: rabbitmq:3-management
     ports:
       - "15672:15672"
     restart: always
     
+  rabbitmq:
+      container_name: rabbitmq-local-container
+      image: rabbitmq
+      ports:
+        - "5672:5672"
+      restart: always
